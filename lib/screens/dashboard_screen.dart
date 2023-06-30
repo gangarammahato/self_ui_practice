@@ -12,20 +12,20 @@ class DashboardScreen extends StatefulWidget {
 }
 
 class _DashboardScreenState extends State<DashboardScreen> {
-   int _current = 0;
+  int _current = 0;
 
   final CarouselController _controller = CarouselController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   backgroundColor: Colors.blue,
-      // ),
+      appBar: AppBar(
+        backgroundColor: Colors.blue,
+      ),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Container(
-         height: 1000,
-         // height: MediaQuery.of(context).size.height,
+          height: 1000,
+          // height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width,
           color: Colors.white,
           child: Stack(
@@ -46,136 +46,134 @@ class _DashboardScreenState extends State<DashboardScreen> {
                       //scrolledUnderElevation: 4,
                       backgroundColor: Colors.transparent,
                       title: TextField(
-                        
-                  
-                                    decoration: InputDecoration(
-                    hintText:('iMac'),
-                    prefixIcon: const Icon(Icons.search),
-                    contentPadding: const EdgeInsets.all(0),
-                                filled: true,
-                                fillColor: Colors.white,
-                                border: OutlineInputBorder(
-                                  borderSide: BorderSide.none,
-                                  borderRadius: BorderRadius.circular(10),
-                                ),
-                              ),
-                              
-                        
+                        decoration: InputDecoration(
+                          hintText: ('iMac'),
+                          prefixIcon: const Icon(Icons.search),
+                          contentPadding: const EdgeInsets.all(0),
+                          filled: true,
+                          fillColor: Colors.white,
+                          border: OutlineInputBorder(
+                            borderSide: BorderSide.none,
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                        ),
                       ),
                       actions: [
                         Container(
-                      
                           decoration: const BoxDecoration(
-                                color: Color(0xffFF8F56),
-                                //borderRadius: BorderRadius.all(Radius.circular(200)),
-                  
+                            color: Color(0xffFF8F56),
+                            //borderRadius: BorderRadius.all(Radius.circular(200)),
+
                             shape: BoxShape.circle,
                           ),
                           child: IconButton(
-                            onPressed: (){}, 
-                            icon: const Icon(Icons.store, color: Colors.white, size: 25,),
-                             ),
+                            onPressed: () {},
+                            icon: const Icon(
+                              Icons.store,
+                              color: Colors.white,
+                              size: 25,
+                            ),
+                          ),
                         ),
                       ],
-                      
                     ),
                   ),
-                  
-                ), 
                 ),
-                Positioned(
-                  top: 125,
-                  child:Container(
-                    height: 130.h,
-                    //width: 300.w,
-                    width: MediaQuery.of(context).size.width,
-                    color: Colors.transparent,
-                    child: Column(
-                      children: [
-                        CarouselSlider(
-                          items: List.generate(3, (index){
-                            return Padding(
-                              padding: const EdgeInsets.symmetric(horizontal: 15),
-                              child: ClipRRect(
-                                
-                                                      borderRadius: BorderRadius.circular(16.0),
-                                                      child: Image.asset("assets/images/Mask Group.png",
-                                                      height: 130.h,
-                                                      width: MediaQuery.of(context).size.width,
-                                                      fit: BoxFit.cover,
-                                                      
-                                                      ),
-                                                    ),
-                            );
-                          }),
-                           carouselController: _controller, 
-                          options: CarouselOptions(
-                             height: 130,
-                        aspectRatio: 16 / 9,
-                        viewportFraction: 1,
-                        initialPage: 0,
-                        enableInfiniteScroll: true,
-                        reverse: false,
-                        autoPlay: true,
-                        autoPlayInterval: const Duration(seconds: 3),
-                        autoPlayAnimationDuration: const Duration(milliseconds: 800),
-                        autoPlayCurve: Curves.fastOutSlowIn,
-                        enlargeCenterPage: true,
-                        enlargeFactor: 0.3,
-                        //onPageChanged: callbackFunction,
-                        scrollDirection: Axis.horizontal,
-                        onPageChanged: (index, reason){
-                          setState(() {
-                            _current = index;
-                          });
-                        }
-                          ),
-                          ),
-                      ],
-                    ),
-                  ),
-                  ),
-                  Positioned(
-                    top: 260,
-                    child: Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 15),
-                     // height: 1000,
-                      //height: MediaQuery.of(context).size.height,
-                      width: MediaQuery.of(context).size.width,
-                      color: Colors.white,
-                      child: Column(
-                        //mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          const CommonText(),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: List.generate(3, (index) => const IteamsDetails()),
-                          ),
-                          const SizedBox(height: 15,),
-                      
-                           const CommonText(),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: List.generate(3, (index) => const IteamsDetails()),
-                          ),
-                      
-                          const SizedBox(height: 15,),
-                      
-                           const CommonText(),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: List.generate(3, (index) => const IteamsDetails()),
-                          )
-                      
-                        ],
+              ),
+              Positioned(
+                top: 125,
+                child: Container(
+                  height: 130.h,
+                  //width: 300.w,
+                  width: MediaQuery.of(context).size.width,
+                  color: Colors.transparent,
+                  child: Column(
+                    children: [
+                      CarouselSlider(
+                        items: List.generate(3, (index) {
+                          return Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 15),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(16.0),
+                              child: Image.asset(
+                                "assets/images/Mask Group.png",
+                                height: 130.h,
+                                width: MediaQuery.of(context).size.width,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                          );
+                        }),
+                        carouselController: _controller,
+                        options: CarouselOptions(
+                            height: 130,
+                            aspectRatio: 16 / 9,
+                            viewportFraction: 1,
+                            initialPage: 0,
+                            enableInfiniteScroll: true,
+                            reverse: false,
+                            autoPlay: true,
+                            autoPlayInterval: const Duration(seconds: 3),
+                            autoPlayAnimationDuration:
+                                const Duration(milliseconds: 800),
+                            autoPlayCurve: Curves.fastOutSlowIn,
+                            enlargeCenterPage: true,
+                            enlargeFactor: 0.3,
+                            //onPageChanged: callbackFunction,
+                            scrollDirection: Axis.horizontal,
+                            onPageChanged: (index, reason) {
+                              setState(() {
+                                _current = index;
+                              });
+                            }),
                       ),
-                    ),
-                    ),
+                    ],
+                  ),
+                ),
+              ),
+              Positioned(
+                top: 260,
+                child: Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  // height: 1000,
+                  //height: MediaQuery.of(context).size.height,
+                  width: MediaQuery.of(context).size.width,
+                  color: Colors.white,
+                  child: Column(
+                    //mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      const CommonText(),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children:
+                            List.generate(3, (index) => const IteamsDetails()),
+                      ),
+                      const SizedBox(
+                        height: 15,
+                      ),
+                      const CommonText(),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children:
+                            List.generate(3, (index) => const IteamsDetails()),
+                      ),
+                      const SizedBox(
+                        height: 15,
+                      ),
+                      const CommonText(),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children:
+                            List.generate(3, (index) => const IteamsDetails()),
+                      )
+                    ],
+                  ),
+                ),
+              ),
             ],
           ),
         ),
-        
       ),
     );
   }
