@@ -20,6 +20,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blue,
+        title: const Text('title added'),
       ),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
