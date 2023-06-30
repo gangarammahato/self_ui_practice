@@ -18,9 +18,9 @@ class _DashboardScreenState extends State<DashboardScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.blue,
-      ),
+      // appBar: AppBar(
+      //   backgroundColor: Colors.blue,
+      // ),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Container(
